@@ -34,13 +34,13 @@ public class Playarea {
    * <p>
    * @return Returns a point for specific coordinates.
    */
-  // @ToDo: Implement secure return, check if x and y valid
+  // TODO: Implement secure return, check if x and y valid
   public Point getPoint(int x, int y) {
     return this.playarea[x][y];
   }
 
   /*
-   * @ToDo: Change method name, improve handling, clarify what this method should do
+   * TODO: Change method name, improve handling, clarify what this method should do
    */
   public boolean Attk(Point atk) {
     boolean right = false;
@@ -55,7 +55,7 @@ public class Playarea {
   }
 
   /*
-   * @ToDo: Implement method, clarify what this method should do
+   * TODO: Implement method, clarify what this method should do
    */
   public boolean setShip(Point start, Point end) throws NoSuchMethodException {
     throw new NoSuchMethodException("Method currently not implemented!");

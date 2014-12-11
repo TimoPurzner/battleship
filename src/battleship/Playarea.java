@@ -1,13 +1,11 @@
-package schiffeversenken;
+package battleship;
 
-import schiffe.*;
-
-public class Spielfeld {
+public class Playarea {
 
 	Point[][] field;
 
 	// Konstruktor
-	Spielfeld(int n, int m) {
+	Playarea(int n, int m) {
 
 		field = new Point[n][m];
 

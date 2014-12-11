@@ -1,8 +1,5 @@
-package schiffeversenken;
+package battleship;
 
-import schiffe.*;
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -11,19 +8,19 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Wie groﬂ soll das Spielfeld sein? L‰nge: ");
+		System.out.print("Wie groﬂ soll das Playarea sein? L‰nge: ");
 		int fieldlength = sc.nextInt();
 		sc.nextLine();
 		System.out.print("Breite: ");
 		int fieldwidth = sc.nextInt();
 
-		// Spielfelder die Spieler 1 sieht
-		Spielfeld p1Shipps = new Spielfeld(fieldlength, fieldwidth);
-		Spielfeld p1Atk = new Spielfeld(fieldlength, fieldwidth);
+		// Playareaer die Spieler 1 sieht
+		Playarea p1Shipps = new Playarea(fieldlength, fieldwidth);
+		Playarea p1Atk = new Playarea(fieldlength, fieldwidth);
 
-		// Spielfelder die Spieler 2 sieht
-		Spielfeld p2Shipps = new Spielfeld(fieldlength, fieldwidth);
-		Spielfeld p2Atk = new Spielfeld(fieldlength, fieldwidth);
+		// Playareaer die Spieler 2 sieht
+		Playarea p2Shipps = new Playarea(fieldlength, fieldwidth);
+		Playarea p2Atk = new Playarea(fieldlength, fieldwidth);
 
 		// Start des Spieles
 		Main.cls();

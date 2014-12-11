@@ -1,4 +1,4 @@
-package schiffeversenken;
+package battleship;
 
 public class Point {
 

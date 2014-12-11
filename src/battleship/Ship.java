@@ -1,15 +1,15 @@
-package schiffeversenken;
+package battleship;
 
-public class Schiffe {
+public class Ship {
 
-	int lenth = 0;
+	int length;
 	Point startPos;
 	Point endPos;
 	boolean destroyed;
 
 	// Konstruktor
-	Schiffe(int l, Point start, Point end) {
-		this.lenth = l;
+	Ship(int length, Point start, Point end) {
+		this.length = length;
 		this.startPos = start;
 		this.endPos = end;
 		this.destroyed = false;

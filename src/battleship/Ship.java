@@ -2,22 +2,24 @@ package battleship;
 
 public class Ship {
 
-	int length;
-	Point startPos;
-	Point endPos;
-	boolean destroyed;
+	private final int length;
+	private Point startPos;
+	private Point endPos;
+	private boolean destroyed;
 
 	// Konstruktor
-	Ship(int length, Point start, Point end) {
+	Ship(int length) {
 		this.length = length;
-		this.startPos = start;
-		this.endPos = end;
 		this.destroyed = false;
 	}
 
 	// Getter
 	public boolean destroyed() {
 		return destroyed;
+	}
+	
+	public void setDestroyed(boolean dest) {
+		destroyed = dest;
 	}
 
 

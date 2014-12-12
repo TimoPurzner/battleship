@@ -38,6 +38,7 @@ public class Playarea {
   public Point getPoint(int x, int y) {
     return this.playarea[x][y];
   }
+  
 
   /*
    * TODO: Change method name, improve handling, clarify what this method should do
@@ -54,12 +55,6 @@ public class Playarea {
     return right;
   }
 
-  /*
-   * TODO: Implement method, clarify what this method should do
-   */
-  public boolean setShip(Point start, Point end) throws NoSuchMethodException {
-    throw new NoSuchMethodException("Method currently not implemented!");
-  }
 
   /**
    * Method that generates the String of the formatted actual playarea object.

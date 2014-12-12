@@ -17,10 +17,16 @@ public class Ship {
 	public boolean destroyed() {
 		return destroyed;
 	}
+
+	//Setter
+	public void setStart(Point start){
+		
+	}
 	
 	public void setDestroyed(boolean dest) {
 		destroyed = dest;
 	}
+
 
 
 }

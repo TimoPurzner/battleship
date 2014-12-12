@@ -64,6 +64,14 @@ public class Point {
   public boolean markEquals(MarkType mt) {
     return this.mark == mt;
   }
+  
+  /**
+   * Checks if the point ist marked. 
+   * @return Returns true if the point is not empty. Otherwise it returns false.
+   */
+  public boolean isMarked() {
+    return this.mark != MarkType.Empty;
+  }
 
   /**
    * Method that gets the content of the point by resolving its MarkType

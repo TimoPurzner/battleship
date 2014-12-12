@@ -8,8 +8,8 @@ public class Ship {
 	private boolean destroyed;
 
 	// Konstruktor
-	Ship(int length) {
-		this.length = length;
+	Ship(ShipType st){
+		this.length = ShipType.getShipLength(st);
 		this.destroyed = false;
 	}
 

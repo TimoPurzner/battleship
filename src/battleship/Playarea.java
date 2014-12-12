@@ -34,9 +34,12 @@ public class Playarea {
    * <p>
    * @return Returns a point for specific coordinates.
    */
-  // TODO: Implement secure return, check if x and y valid
   public Point getPoint(int x, int y) {
-    return this.playarea[x][y];
+    if (x < this.playarea.length && y < this.playarea[x].length) {
+      return this.playarea[x][y];
+    } else {
+      return null;
+    }
   }
 
   /*

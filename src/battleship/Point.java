@@ -50,7 +50,7 @@ public class Point {
    * <p>
    * @param mt Sets the <var>MarkType</var> to the value of <var>mt</var>.
    */
-  public void setmark(MarkType mt) {
+  public void setMark(MarkType mt) {
     this.mark = mt;
   }
 

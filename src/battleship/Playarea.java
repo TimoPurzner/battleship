@@ -27,34 +27,21 @@ public class Playarea {
   }
 
   /**
-   * Simple getter for retrieving a point object for specific x and y coodinates.
+   * Simple getter for retrieving a point object by using specific x and y coodinates.
    * <p>
    * @param x Specific x coordinate of the wanted point.
    * @param y Specific y coordinate of the wanted point.
    * <p>
    * @return Returns a point for specific coordinates.
    */
-  // TODO: Implement secure return, check if x and y valid
   public Point getPoint(int x, int y) {
-    return this.playarea[x][y];
+
+    if (x < this.playarea.length && y < this.playarea[x].length) {
+      return this.playarea[x][y];
+    } else {
+      return null;
+    }
   }
-  
-
-  /*
-   * TODO: Change method name, improve handling, clarify what this method should do
-   */
-  public boolean Attk(Point atk) {
-    boolean right = false;
-    /*
-     * if (atk.x() < 0 || atk.x() > field[0].length || atk.y() < 0 || atk.y() > field.length || field[atk.x() -
-     * 1][atk.y() - 1)] == 'X' || field[atk.x() - 1][atk.y() - 1)] == 'O'){ right=false; } else{ right=true;
-     *
-     * field[(atk.x() - 1)][(atk.y() - 1)].setField('X'); }
-     */
-
-    return right;
-  }
-
 
   /**
    * Method that generates the String of the formatted actual playarea object.

@@ -50,7 +50,7 @@ public class Point {
    * <p>
    * @param mt Sets the <var>MarkType</var> to the value of <var>mt</var>.
    */
-  public void setmark(MarkType mt) {
+  public void setMark(MarkType mt) {
     this.mark = mt;
   }
 
@@ -63,6 +63,14 @@ public class Point {
    */
   public boolean markEquals(MarkType mt) {
     return this.mark == mt;
+  }
+  
+  /**
+   * Checks if the point ist marked. 
+   * @return Returns true if the point is not empty. Otherwise it returns false.
+   */
+  public boolean isMarked() {
+    return this.mark != MarkType.Empty;
   }
 
   /**

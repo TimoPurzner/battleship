@@ -13,16 +13,13 @@ public class Main {
     sc.nextLine();
     System.out.print("Breite: ");
     int fieldwidth = sc.nextInt();
+    System.out.print("\nWie viele Schiffe hat jeder Spieler? \nAnzahl: ");
+    int anz = sc.nextInt();
+    // Player 1
+   Player p1 = new Player(fieldlength,fieldwidth); 
 
-    // Playareaer die Spieler 1 sieht
-    Playarea p1Shipps = new Playarea(fieldlength, fieldwidth);
-    Playarea p1Atk = new Playarea(fieldlength, fieldwidth);
-    
-   
-
-    // Playareaer die Spieler 2 sieht
-    Playarea p2Shipps = new Playarea(fieldlength, fieldwidth);
-    Playarea p2Atk = new Playarea(fieldlength, fieldwidth);
+    // Player 2
+   Player p2 = new Player(fieldlength,fieldwidth);
     
     // Start des Spieles
     //TODO: Implement new game, end
@@ -37,7 +34,7 @@ public class Main {
     
     //P1 schiffe Setzten
     System.out.println("Spieler 1 setzt nun die Schiffe!");
-    p1Shipps.toString();
+    p1.showFieldwithShipps();
 
     //P1 schiffe Setzten
     System.out.println("Spieler 2 setzt nun die Schiffe!");
@@ -49,13 +46,13 @@ public class Main {
     	
       boolean eing = false;
       while (eing == false) {
-        p1Atk.toString();
+        p1.showFieldWithAtks();
         System.out.println("\nGeben sie Die Koordinaten des Angriffs an");
         System.out.print("x: ");
         int x = sc.nextInt();
         System.out.print("y: ");
         int y = sc.nextInt();
-        eing = p1Atk.Attk(new Point(x, y));
+       // eing = p1Atk.Attk(new Point(x, y));
         if (eing == false) {
           System.out.println("Falsche eingabe");
         }
@@ -64,7 +61,7 @@ public class Main {
 
       // P1 getroffen?
       // P2 Schiffe kaputt?
-      p1Atk.toString();
+      p1.showFieldWithAtks();
       System.out.println("F�r n�chsten Spieler belibige Taste dr�cken");
       sc.nextLine();
       cls();
@@ -73,19 +70,19 @@ public class Main {
       // P2 greift an
       eing = false;
       while (eing == false) {
-        p2Atk.toString();
+        p2.showFieldWithAtks();
         System.out.println("\nGeben sie Die Koordinaten des Angriffs an");
         System.out.print("x: ");
         int x = sc.nextInt();
         System.out.print("y: ");
         int y = sc.nextInt();
-        eing = p2Atk.Attk(new Point(x, y));
+       // eing = p2Atk.Attk(new Point(x, y));
         if (eing == false) {
           System.out.println("Falsche eingabe");
         }
       }
 
-      p1Atk.toString();
+      p2.showFieldWithAtks();
       System.out.println("F�r n�chsten Spieler belibige Taste dr�cken");
       sc.nextLine();
       cls();

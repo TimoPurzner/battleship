@@ -14,13 +14,17 @@ public class Ship {
 	}
 
 	// Getter
-	public boolean destroyed() {
+	public boolean getDestroyed() {
 		return destroyed;
 	}
 
 	//Setter
 	public void setStart(Point start){
-		
+		this.startPos=start;
+	}
+	
+	public void setEndPoint(Point end){
+		this.endPos=end;
 	}
 	
 	public void setDestroyed(boolean dest) {

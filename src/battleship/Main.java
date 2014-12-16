@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
+  // TODO Fix all non utf-8 chars
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     Scanner sc = new Scanner(System.in);
@@ -34,7 +35,7 @@ public class Main {
     
     //P1 schiffe Setzten
     System.out.println("Spieler 1 setzt nun die Schiffe!");
-    p1.showFieldwithShipps();
+    // NOT WORKING ANYMORE !!! p1.showFieldwithShipps();
 
     //P1 schiffe Setzten
     System.out.println("Spieler 2 setzt nun die Schiffe!");
@@ -46,13 +47,13 @@ public class Main {
     	
       boolean eing = false;
       while (eing == false) {
-        p1.showFieldWithAtks();
+        // NOT WORKING ANYMORE !!!! p1.showFieldWithAtks();
         System.out.println("\nGeben sie Die Koordinaten des Angriffs an");
         System.out.print("x: ");
         int x = sc.nextInt();
         System.out.print("y: ");
         int y = sc.nextInt();
-       // eing = p1Atk.Attk(new Point(x, y));
+        // NOT WORKING ANYMORE !!!! eing = p1Atk.Attk(new Point(x, y));
         if (eing == false) {
           System.out.println("Falsche eingabe");
         }
@@ -61,7 +62,7 @@ public class Main {
 
       // P1 getroffen?
       // P2 Schiffe kaputt?
-      p1.showFieldWithAtks();
+      // NOT WORKING ANYMORE !!! p1.showFieldWithAtks();
       System.out.println("F�r n�chsten Spieler belibige Taste dr�cken");
       sc.nextLine();
       cls();
@@ -70,19 +71,19 @@ public class Main {
       // P2 greift an
       eing = false;
       while (eing == false) {
-        p2.showFieldWithAtks();
+        // NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
         System.out.println("\nGeben sie Die Koordinaten des Angriffs an");
         System.out.print("x: ");
         int x = sc.nextInt();
         System.out.print("y: ");
         int y = sc.nextInt();
-       // eing = p2Atk.Attk(new Point(x, y));
+        // NOT WORKING ANYMORE !!! eing = p2Atk.Attk(new Point(x, y));
         if (eing == false) {
           System.out.println("Falsche eingabe");
         }
       }
 
-      p2.showFieldWithAtks();
+      // NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
       System.out.println("F�r n�chsten Spieler belibige Taste dr�cken");
       sc.nextLine();
       cls();

@@ -3,116 +3,113 @@ package battleship;
 import java.util.Scanner;
 
 public class Main {
+	
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
 
-	// TODO Fix all non utf-8 chars
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+    System.out.print("How big should the playarea should be?\n Length: ");
+    int fieldlength = sc.nextInt();
 
-		System.out.print("Wie gross soll das Spielfeld sein? Laenge: ");
-		int fieldlength = sc.nextInt();
-		sc.nextLine();
-		System.out.print("Breite: ");
-		int fieldwidth = sc.nextInt();
-		System.out.print("\nWie viele Schiffe hat jeder Spieler? \nAnzahl: ");
-		int anz = sc.nextInt();
-		// Player 1
-		Player p1 = new Player(fieldlength, fieldwidth);
+    System.out.print("  Width: ");
+    int fieldwidth = sc.nextInt();
 
-		// Player 2
-		Player p2 = new Player(fieldlength, fieldwidth);
+    //System.out.print("\nHow many  \nAnzahl: ");
+    //int anz = sc.nextInt();
 
-		// Start des Spieles
-		// TODO: Implement new game, end
-		Main.cls();
-		/*System.out.println("Was moechtest du tun?");
-		System.out.print("\t e oder Ende = Spielende"
-				+ "\t n oder Neu = NeuesSpiel\n");*/
+    Player p1 = new Player(fieldlength, fieldwidth);
+    Player p2 = new Player(fieldlength, fieldwidth);
 
-		// setzen der Schiffe
+    //TODO: Starting game
+    Main.cls();
+    System.out.println("What do you want to do next?");
+    System.out.println("'q' or 'quit'\tQuitting the game\n"
+            + "'n' or 'new'\tStart new game");
+    String in = sc.nextLine();
 
-		//P1 set ships
-		cls();
-		System.out.println("Spieler 1 setzt nun die Schiffe!\n");
-		System.out.println("Bitte gibt die Start und end Koordinate deines Schiffes an");
-		System.out.print("Bitte x Wert der Start Koordinate eingeben x: ");
-		int x = sc.nextInt();
-		System.out.print("Bitte y Wert der Start Koodinate eingeben y: ");
-		int y = sc.nextInt();
-		Point start = new Point(x, y);
+    //TODO: Setting ships for player1 and player2
+    System.out.println("Player1, set your ships!");
+    
+	cls();
+	System.out.println("Spieler 1 setzt nun die Schiffe!\n");
+	System.out.println("Bitte gibt die Start und end Koordinate deines Schiffes an");
+	System.out.print("Bitte x Wert der Start Koordinate eingeben x: ");
+	int n = sc.nextInt();
+	System.out.print("Bitte y Wert der Start Koodinate eingeben y: ");
+	int z = sc.nextInt();
+	Point start = new Point(n, z);
 
-		System.out.print("Bitte x Wert der End Koordinate eingeben x: ");
-		x = sc.nextInt();
-		System.out.print("Bitte y Wert der End Koodinate eingeben y: ");
-		y = sc.nextInt();
-		Point end = new Point(x, y);
+	System.out.print("Bitte x Wert der End Koordinate eingeben x: ");
+	n = sc.nextInt();
+	System.out.print("Bitte y Wert der End Koodinate eingeben y: ");
+	z = sc.nextInt();
+	Point end = new Point(n,z);
 
-		p1.setShip(start, end);
-		p1.ships.toString();
+	p1.setShip(start, end);
+    
+    System.out.println(p1.getPrimary());
 
+    System.out.println("Player2, set your ships!");
+    System.out.println(p2.getPrimary());
+    
+    /*
+     * 
+     */
+    int win = 0;
+    while (win == 0) {
+      boolean wrong_input = true;
 
-		// P2 schiffe Setzten
-		System.out.println("Spieler 2 setzt nun die Schiffe!");
+      /*
+       * Player1 is attacking
+       * block gets repeated until player enters valid format
+       */
+      while (wrong_input) {
+        // NOT WORKING ANYMORE !!!! p1.showFieldWithAtks();
+        System.out.println("\nEnter coordinates:\n");
+        System.out.print("  x: ");
+        int x = sc.nextInt();
+        System.out.print("  y: ");
+        int y = sc.nextInt();
+        // NOT WORKING ANYMORE !!!! eing = p1Atk.Attk(new Point(x, y));
+        if (wrong_input) {
+          System.out.println("Missformatted input!");
+        }
+      }
 
-		// Wiederhole bis P1 oder P2 alle Schiffe verloren hat
-		int win = 0;
-		while (win == 0) {
-			// P1 greift an
-/*
-			boolean eing = false;
-			while (eing == false) {
-				// NOT WORKING ANYMORE !!!! p1.showFieldWithAtks();
-				System.out
-						.println("\nGeben sie Die Koordinaten des Angriffs an");
-				System.out.print("x: ");
-				int x = sc.nextInt();
-				System.out.print("y: ");
-				int y = sc.nextInt();
-				// NOT WORKING ANYMORE !!!! eing = p1Atk.Attk(new Point(x, y));
-				if (eing == false) {
-					System.out.println("Falsche eingabe");
-				}
+      // P1 getroffen?
+      // P2 Schiffe kaputt?
+      // NOT WORKING ANYMORE !!! p1.showFieldWithAtks();
+      System.out.println("Next player!\nPress 'Enter' to continue");
+      sc.nextLine();
+      cls();
 
-			}*/
+      // alle Schiffe von P2 versenkt?
+      // P2 greift an
+      wrong_input = true;
+      while (wrong_input) {
+        // NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
+        System.out.println("\nEnter coordinates:\n");
+        System.out.print("  x: ");
+        int x = sc.nextInt();
+        System.out.print("  y: ");
+        int y = sc.nextInt();
+        // NOT WORKING ANYMORE !!! eing = p2Atk.Attk(new Point(x, y));
+        if (wrong_input) {
+          System.out.println("Misformatted input!");
+        }
+      }
 
-			// P1 getroffen?
-			// P2 Schiffe kaputt?
-			// NOT WORKING ANYMORE !!! p1.showFieldWithAtks();
-			System.out
-					.println("F�r n�chsten Spieler belibige Taste dr�cken");
-			sc.nextLine();
-			cls();
+      // NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
+      System.out.println("Next player!\nPress 'Enter' to continue");
+      sc.nextLine();
+      cls();
 
-			// alle Schiffe von P2 versenkt?
-			// P2 greift an
-			/*eing = false;
-			while (eing == false) {
-				// NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
-				System.out
-						.println("\nGeben sie Die Koordinaten des Angriffs an");
-				System.out.print("x: ");
-				int x = sc.nextInt();
-				System.out.print("y: ");
-				int y = sc.nextInt();
-				// NOT WORKING ANYMORE !!! eing = p2Atk.Attk(new Point(x, y));
-				if (eing == false) {
-					System.out.println("Falsche eingabe");
-				}
-			}*/
+      //TODO: Check if all ships are destroyed
+    }
 
-			// NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
-			System.out
-					.println("F�r n�chsten Spieler belibige Taste dr�cken");
-			sc.nextLine();
-			cls();
-			// P2 getroffen?
+    System.out.println("Player " + win + " wins!");
+  }
 
-			// alle Schiffe von P1 versenkt?
-		}
-		System.out.println("Gewonnen hat Spieler " + win + " Gl�ckwunsch!");
-	}
-
-	public static void cls() {
-		System.out.print("\n\n\n\n\n\n\n\n\n\n");
-	}
+  private static void cls() {
+    System.out.print("\n\n\n\n\n\n\n\n\n\n");
+  }
 }

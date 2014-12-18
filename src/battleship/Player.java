@@ -54,10 +54,20 @@ public class Player {
     boolean set = false;
 
     if (start.x() == end.x()) {
-      for (int i = start.y(); i < end.y(); i++) {
-
+      for (int i = start.y(); i <= end.y(); i++) {
+    	  ships.getPoint(start.x(), i).setMark(MarkType.Ship);
+    	  
       }
+      return true;
     }
+    
+    if (start.y() == end.y()) {
+        for (int i = start.x(); i <= end.x(); i++) {
+      	  ships.getPoint(start.y(), i).setMark(MarkType.Ship);
+      	  
+        }
+        return true;
+      }
 
     return set;
   }

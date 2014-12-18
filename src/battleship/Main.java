@@ -7,17 +7,17 @@ public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
-    System.out.print("How big should the playarea should be?\n Length: ");
-    int fieldlength = sc.nextInt();
+    System.out.print("How big should the playarea should be?\n  Length: ");
+    int width = sc.nextInt();
 
-    System.out.print("  Width: ");
-    int fieldwidth = sc.nextInt();
+    System.out.print("  Height: ");
+    int height = sc.nextInt();
 
     //System.out.print("\nHow many  \nAnzahl: ");
     //int anz = sc.nextInt();
 
-    Player p1 = new Player(fieldlength, fieldwidth);
-    Player p2 = new Player(fieldlength, fieldwidth);
+    Player p1 = new Player(width, height);
+    Player p2 = new Player(width, height);
 
     //TODO: Starting game
     Main.cls();
@@ -63,16 +63,15 @@ public class Main {
        * block gets repeated until player enters valid format
        */
       while (wrong_input) {
-        // NOT WORKING ANYMORE !!!! p1.showFieldWithAtks();
+        System.out.println(p1.getTracker());
         System.out.println("\nEnter coordinates:\n");
         System.out.print("  x: ");
         int x = sc.nextInt();
         System.out.print("  y: ");
         int y = sc.nextInt();
-        // NOT WORKING ANYMORE !!!! eing = p1Atk.Attk(new Point(x, y));
-        if (wrong_input) {
-          System.out.println("Missformatted input!");
-        }
+        // TODO: If attack was successfull player may attack again
+        p1.attack(x,y);
+        wrong_input = false;
       }
 
       // P1 getroffen?
@@ -86,22 +85,21 @@ public class Main {
       // P2 greift an
       wrong_input = true;
       while (wrong_input) {
-        // NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
+        System.out.println(p2.getTracker());
         System.out.println("\nEnter coordinates:\n");
         System.out.print("  x: ");
         int x = sc.nextInt();
         System.out.print("  y: ");
         int y = sc.nextInt();
-        // NOT WORKING ANYMORE !!! eing = p2Atk.Attk(new Point(x, y));
-        if (wrong_input) {
-          System.out.println("Misformatted input!");
-        }
+        // TODO: If attack was successfull player may attack again
+        p2.attack(x,y);
+        wrong_input = false;
       }
 
       // NOT WORKING ANYMORE !!! p2.showFieldWithAtks();
       System.out.println("Next player!\nPress 'Enter' to continue");
       sc.nextLine();
-      cls();
+      //cls();
 
       //TODO: Check if all ships are destroyed
     }

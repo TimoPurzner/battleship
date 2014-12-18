@@ -8,12 +8,12 @@ public class Playarea {
    * Constructor for creating a playarea for one player. Usually a player owns two playareas, one for his ships and one
    * for his attacks.
    * <p>
-   * @param x Specifying the length of the playarea.
+   * @param x Specifying the width of the playarea.
    * @param y Specifying the height of the playarea.
    */
   public Playarea(int x, int y) {
 
-    this.playarea = new Point[x][y];
+    this.playarea = new Point[y][x];
 
     /*
      * Initializing the coordinates

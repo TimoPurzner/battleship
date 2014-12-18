@@ -69,3 +69,4 @@ $RECYCLE.BIN/
 .project
 .classpath
 /dist/
+/build/

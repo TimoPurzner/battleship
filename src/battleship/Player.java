@@ -33,15 +33,29 @@ public class Player {
    * @return Returns <var>true</var> if a ship was hit. Otherwise the method returns <var>fasle</var>.
    */
   public boolean attack(Point target) {
-    Point p = this.tracker.getPoint(target.x(), target.y());
-
-    if (p.isMarked()) {
-      if (p.markEquals(MarkType.Ship)) {
-        p.setMark(MarkType.Hit);
-        return true;
+    return this.attack(target.x(), target.y());
+  }
+  
+  /**
+   * Method that allows a player to attack a specific Point. Further the method marks the attacked point with the
+   * result.
+   * <p> 
+   * @param x
+   * @param y
+   * @return Returns <var>true</var> if a ship was hit. Otherwise the method returns <var>fasle</var>.
+   */
+  public boolean attack(int x, int y) {
+    Point p = this.tracker.getPoint(x, y);
+    
+    if (p != null) {
+      if (p.isMarked()) {
+        if (p.markEquals(MarkType.Ship)) {
+          p.setMark(MarkType.Hit);
+          return true;
+        }
       }
+      p.setMark(MarkType.Water);
     }
-    p.setMark(MarkType.Water);
     return false;
   }
 

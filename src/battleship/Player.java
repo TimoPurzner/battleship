@@ -3,12 +3,11 @@ package battleship;
 public class Player {
 
   // Ships from Player
-  Playarea ships;
-
-  Playarea atk;
+  private Playarea primary;
+  private Playarea tracker;
 
   //Ships from each player
-  Ship[] ship;
+  private Ship[] ships;
 
   /**
    * Constructor to create a player object with two "maps" for the ships and the attacks.
@@ -17,8 +16,8 @@ public class Player {
    * @param area_width  Height of the playarea.
    */
   public Player(int area_length, int area_width) {
-    ships = new Playarea(area_length, area_width);
-    atk = new Playarea(area_length, area_width);
+    this.primary = new Playarea(area_length, area_width);
+    this.tracker = new Playarea(area_length, area_width);
   }
 
   /**
@@ -30,7 +29,7 @@ public class Player {
    * @return Returns <var>true</var> if a ship was hit. Otherwise the method returns <var>fasle</var>.
    */
   public boolean attack(Point target) {
-    Point p = this.atk.getPoint(target.x(), target.y());
+    Point p = this.tracker.getPoint(target.x(), target.y());
 
     if (p.isMarked()) {
       if (p.markEquals(MarkType.Ship)) {
@@ -73,5 +72,23 @@ public class Player {
    */
   public boolean setShip(Point start, Point end, ShipType st) {
     return false;
+  }
+  
+  /**
+   * Getter for the primary playarea. 
+   * TODO: Add better or more secure implementation, so nobody could change it
+   * @return Returns the primary area
+   */
+  public Playarea getPrimary() {
+    return this.primary;
+  }
+  
+  /**
+   * Getter for the tracker playarea.
+   * TODO: Add better or more secure implementation, so nobody could change it
+   * @return Returns the tracker area
+   */
+  public Playarea getTracker() {
+    return this.tracker;
   }
 }
